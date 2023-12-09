@@ -167,3 +167,16 @@ modrinth {
 }
 
 setupJar(this)
+
+publishing {
+    repositories {
+        maven {
+            name = "enjaraiMaven"
+            url = "https://maven.enjarai.nl/mirrors"
+            credentials(PasswordCredentials)
+            authentication {
+                basic(BasicAuthentication)
+            }
+        }
+    }
+}
