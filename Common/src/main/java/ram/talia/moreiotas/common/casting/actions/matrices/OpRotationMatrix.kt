@@ -16,6 +16,9 @@ import kotlin.math.sin
 object OpRotationMatrix: ConstMediaAction {
     override val argc = 2
 
+    override val mediaCost: Int
+        get() = 0
+
     override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
         val axis = args.getVec3(0, argc)
         val theta = args.getDouble(1, argc)

@@ -19,6 +19,9 @@ import ram.talia.moreiotas.api.casting.iota.StringIota
 object OpGetBlockString : ConstMediaAction {
     override val argc = 1
 
+    override val mediaCost: Int
+        get() = 0
+
     override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
         val pos = args.getBlockPos(0, argc)
 

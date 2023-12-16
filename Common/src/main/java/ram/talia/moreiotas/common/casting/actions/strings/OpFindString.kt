@@ -9,6 +9,9 @@ import ram.talia.moreiotas.api.getString
 object OpFindString : ConstMediaAction {
     override val argc = 2
 
+    override val mediaCost: Int
+        get() = 0
+
     override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
         val findee = args.getString(0, argc)
         val finder = args.getString(1, argc)

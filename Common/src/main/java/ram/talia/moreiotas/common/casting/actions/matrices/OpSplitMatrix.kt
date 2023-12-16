@@ -11,6 +11,9 @@ import ram.talia.moreiotas.api.casting.iota.MatrixIota
 
 class OpSplitMatrix(private val splitVertically: Boolean) : ConstMediaAction {
     override val argc = 2
+
+    override val mediaCost: Int
+        get() = 0
     override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
         val mat = args.getNumOrVecOrMatrix(0, argc).asMatrix
         val split = args.getPositiveIntUnderInclusive(1, if (splitVertically) mat.rows else mat.columns, argc)

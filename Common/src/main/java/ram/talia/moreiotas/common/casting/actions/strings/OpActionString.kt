@@ -21,6 +21,9 @@ import ram.talia.moreiotas.api.asActionResult
 object OpActionString : ConstMediaAction {
     override val argc = 1
 
+    override val mediaCost: Int
+        get() = 0
+
     override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
         val pattern = args.getPattern(0, argc)
 

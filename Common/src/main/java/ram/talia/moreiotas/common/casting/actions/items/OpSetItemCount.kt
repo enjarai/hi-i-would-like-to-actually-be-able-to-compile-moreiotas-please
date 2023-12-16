@@ -10,6 +10,9 @@ import ram.talia.moreiotas.api.getItemStack
 object OpSetItemCount : ConstMediaAction {
     override val argc = 2
 
+    override val mediaCost: Int
+        get() = 0
+
     override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
         val stack = args.getItemStack(0, argc)
         val newCount = args.getPositiveInt(1, argc)

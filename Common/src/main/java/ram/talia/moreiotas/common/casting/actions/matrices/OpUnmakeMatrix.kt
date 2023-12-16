@@ -14,6 +14,9 @@ import ram.talia.moreiotas.api.getMatrix
 class OpUnmakeMatrix(val skipBackConversion: Boolean) : ConstMediaAction {
     override val argc = 1
 
+    override val mediaCost: Int
+        get() = 0
+
     override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
         val mat = args.getMatrix(0, argc)
 

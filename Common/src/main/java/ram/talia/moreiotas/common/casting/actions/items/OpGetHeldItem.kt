@@ -14,6 +14,9 @@ import ram.talia.moreiotas.api.asActionResult
 class OpGetHeldItem(private val hand: InteractionHand) : ConstMediaAction {
     override val argc = 1
 
+    override val mediaCost: Int
+        get() = 0
+
     override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
         val stack = when (val holder = args.getEntity(0)) {
             is LivingEntity -> holder.getItemInHand(hand)

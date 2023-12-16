@@ -11,6 +11,9 @@ import ram.talia.moreiotas.api.mod.MoreIotasConfig
 object OpZeroMatrix : ConstMediaAction {
     override val argc = 2
 
+    override val mediaCost: Int
+        get() = 0
+
     override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
         return DoubleMatrix.zeros(
                 args.getPositiveIntUnderInclusive(0, MoreIotasConfig.server.maxMatrixSize, argc),

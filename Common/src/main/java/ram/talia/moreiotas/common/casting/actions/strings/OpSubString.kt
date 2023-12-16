@@ -11,6 +11,9 @@ import ram.talia.moreiotas.api.getString
 object OpSubString : ConstMediaAction {
     override val argc = 3
 
+    override val mediaCost: Int
+        get() = 0
+
     override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
         val string = args.getString(0, argc)
         val start = args.getPositiveIntUnderInclusive(1, string.length, argc)

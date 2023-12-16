@@ -10,6 +10,9 @@ import ram.talia.moreiotas.api.*
 object OpMulMatrix : ConstMediaAction {
     override val argc = 2
 
+    override val mediaCost: Int
+        get() = 0
+
     override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
         val arg0 = args.getNumOrVecOrMatrix(0, OpAddMatrix.argc)
         val arg1 = args.getNumOrVecOrMatrix(1, OpAddMatrix.argc)

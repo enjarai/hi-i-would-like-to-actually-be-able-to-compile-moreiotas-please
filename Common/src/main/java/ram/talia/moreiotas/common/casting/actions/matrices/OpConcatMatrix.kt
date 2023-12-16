@@ -14,6 +14,9 @@ import ram.talia.moreiotas.api.mod.MoreIotasConfig
 class OpConcatMatrix(private val concatVertically: Boolean) : ConstMediaAction {
     override val argc = 2
 
+    override val mediaCost: Int
+        get() = 0
+
     override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
         val mat0 = args.getNumOrVecOrMatrix(0, argc).asMatrix
         val mat1 = args.getNumOrVecOrMatrix(1, argc).asMatrix

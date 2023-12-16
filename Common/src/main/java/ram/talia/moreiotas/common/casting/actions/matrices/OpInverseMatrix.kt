@@ -10,6 +10,9 @@ import ram.talia.moreiotas.api.*
 object OpInverseMatrix : ConstMediaAction {
     override val argc = 1
 
+    override val mediaCost: Int
+        get() = 0
+
     override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
         val mat = args.getNumOrVecOrMatrix(0, argc).asMatrix
         if (mat.rows != mat.columns)

@@ -10,6 +10,9 @@ import ram.talia.moreiotas.api.asActionResult
 object OpTypeItemHeld : ConstMediaAction {
     override val argc = 0
 
+    override val mediaCost: Int
+        get() = 0
+
     override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
         return env.getHeldItemToOperateOn { it.item != Items.AIR }?.stack?.item?.takeUnless { it == Items.AIR }?.asActionResult ?: null.asActionResult
     }
