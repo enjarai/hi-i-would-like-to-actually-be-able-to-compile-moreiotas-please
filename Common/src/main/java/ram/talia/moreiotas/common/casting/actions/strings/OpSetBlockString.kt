@@ -31,9 +31,9 @@ object OpSetBlockString : SpellAction {
         env.assertVecInRange(pos.center)
 
         return SpellAction.Result(
-                Spell(pos, string),
-                MoreIotasConfig.server.setBlockStringCost,
-                listOf(ParticleSpray.burst(Vec3.atCenterOf(pos), 1.0))
+            Spell(pos, string),
+            MoreIotasConfig.server.setBlockStringCost.toLong(),
+            listOf(ParticleSpray.burst(Vec3.atCenterOf(pos), 1.0))
         )
     }
 

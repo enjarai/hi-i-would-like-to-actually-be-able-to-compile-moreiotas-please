@@ -24,7 +24,7 @@ object OpNameSet : SpellAction {
 
         return SpellAction.Result(
             Spell(newName, entityToRename),
-            MoreIotasConfig.server.setBlockStringCost,
+            MoreIotasConfig.server.setBlockStringCost.toLong(),
             listOf(ParticleSpray.burst(entityToRename.position(), 0.5))
         )
     }

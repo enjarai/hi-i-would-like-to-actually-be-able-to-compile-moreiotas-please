@@ -9,9 +9,6 @@ import ram.talia.moreiotas.api.asActionResult
 object OpTypeEntity : ConstMediaAction {
 	override val argc = 1
 
-	override val mediaCost: Int
-		get() = 0
-
 	override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
 		return args.getEntity(0, argc).type.asActionResult
 	}

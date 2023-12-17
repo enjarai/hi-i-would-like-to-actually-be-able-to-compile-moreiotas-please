@@ -8,9 +8,6 @@ import ram.talia.moreiotas.api.asActionResult
 object OpIotaString : ConstMediaAction {
     override val argc = 1
 
-    override val mediaCost: Int
-        get() = 0
-
     override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
         return args[0].display().string.asActionResult
     }

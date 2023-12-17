@@ -13,8 +13,6 @@ import ram.talia.moreiotas.api.getEntityType
 object OpGetEntityAtDyn : ConstMediaAction {
     override val argc = 2
 
-    override val mediaCost: Int
-        get() = 0
     override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
         val type = args.getEntityType(0, argc)
         val pos = args.getVec3(1, argc)

@@ -15,9 +15,6 @@ import kotlin.math.pow
 object OpDeterminantMatrix : ConstMediaAction {
     override val argc = 1
 
-    override val mediaCost: Int
-        get() = 0
-
     private fun determinant(mat: DoubleMatrix): Double {
         if (mat.isScalar)
             return mat.scalar()

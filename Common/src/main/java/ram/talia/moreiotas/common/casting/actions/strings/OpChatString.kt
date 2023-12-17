@@ -9,9 +9,6 @@ import ram.talia.moreiotas.xplat.IXplatAbstractions
 class OpChatString(private val allChat: Boolean) : ConstMediaAction {
     override val argc = 0
 
-    override val mediaCost: Int
-        get() = 0
-
     override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
         return IXplatAbstractions.INSTANCE.lastMessage(if (allChat) null else env.caster)?.asActionResult ?:
             "".asActionResult

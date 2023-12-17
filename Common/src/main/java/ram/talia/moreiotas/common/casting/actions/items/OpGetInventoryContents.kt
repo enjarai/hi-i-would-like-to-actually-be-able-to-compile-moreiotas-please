@@ -18,9 +18,6 @@ import ram.talia.moreiotas.api.casting.iota.ItemTypeIota
 class OpGetInventoryContents(private val returnStacks: Boolean) : ConstMediaAction {
     override val argc = 2
 
-    override val mediaCost: Int
-        get() = 0
-
     override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
         val pos = args.getBlockPos(0, argc)
         env.assertVecInRange(pos.center)

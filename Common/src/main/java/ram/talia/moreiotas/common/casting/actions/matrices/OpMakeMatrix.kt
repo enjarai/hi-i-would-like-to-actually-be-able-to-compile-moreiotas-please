@@ -15,9 +15,6 @@ import ram.talia.moreiotas.api.mod.MoreIotasConfig
 object OpMakeMatrix : ConstMediaAction {
     override val argc = 1
 
-    override val mediaCost: Int
-        get() = 0
-
     override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
         when (val arg = args[0]) {
             is DoubleIota -> return DoubleMatrix.scalar(arg.double).asActionResult

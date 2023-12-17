@@ -11,9 +11,6 @@ import ram.talia.moreiotas.api.mod.MoreIotasConfig
 object OpIdentityMatrix : ConstMediaAction {
     override val argc = 1
 
-    override val mediaCost: Int
-        get() = 0
-
     override fun execute(args: List<Iota>, env: CastingEnvironment): List<Iota> {
         return DoubleMatrix.eye(args.getPositiveIntUnderInclusive(0, MoreIotasConfig.server.maxMatrixSize, argc)).asActionResult
     }
